@@ -33,7 +33,7 @@
     console.log("onReceivedActivityMessageViaJavascriptInterface " + event);
   }
 
-  function postMessage(postData) {
+  function postMessageMobile(postData) {
     window.webkit.messageHandlers.callBackHandler.postMessage(postData);
   }
 
@@ -55,7 +55,7 @@
           jibunAddress: jibunAddress,
           zonecode: data.zonecode,
         };
-        window.postMessage(postData);
+        window.postMessagepostMessageMobile(postData);
       },
       width: "100%",
       height: "100%",
