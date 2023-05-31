@@ -32,6 +32,9 @@
         console.log("onReceivedActivityMessageViaJavascriptInterface "+event);
     }
 
+    function postMessageMobile(postData) {
+      window.webkit.messageHandlers.callBackHandler.postMessage(postData);
+    }
 
     // 우편번호 찾기 화면을 넣을 element
     var element_layer = document.getElementById('layer');
@@ -83,7 +86,10 @@
                     fullRoadAddr += extraRoadAddr;
                 }
 
+                window.postMessageMobile(fullRoadAddr);
                 window.MysosoApp.processDATA(data.zonecode + ", " + fullRoadAddr);
+                
+                
             },
             width : '100%',
             height : '100%'
